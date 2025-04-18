@@ -84,7 +84,7 @@ end
 
 
 puts "OUTPUT"
-puts "------"
+puts "-------"
 puts "Total expenditure of the first order: $#{order_total(orders[0])}"
 
 puts "\nTotal revenue: $#{total_revenue(orders)}"
