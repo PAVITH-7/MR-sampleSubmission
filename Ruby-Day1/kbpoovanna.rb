@@ -38,8 +38,6 @@ orders = [
 
 # METHODS
 
-
-
 def order_total(order)
 
     order[:items].sum { |item| item[:unit_price] * item[:quantity] }
