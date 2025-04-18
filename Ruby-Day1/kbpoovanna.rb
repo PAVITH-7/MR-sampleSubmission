@@ -38,8 +38,6 @@ orders = [
 
 # METHODS
 
-
-
 def order_total(order)
 
     order[:items].sum { |item| item[:unit_price] * item[:quantity] }
@@ -56,7 +54,7 @@ def top_customer(orders)
   customer_totals = orders.group_by { |order| order[:customer] }.transform_values { |customer_orders|customer_orders.sum { |order| order_total(order) } }
   customer_totals.max_by { |_customer, total| total }.first
 end
-# using transform here in order to transform the list of orders to total expenditure in the key value put_via_redirect
+# using transform here in order to transform the list of orders to total expenditure in the key value pair
 
 
 def best_selling_item(orders)
@@ -84,7 +82,7 @@ end
 
 
 puts "OUTPUT"
-puts "------"
+puts "-------"
 puts "Total expenditure of the first order: $#{order_total(orders[0])}"
 
 puts "\nTotal revenue: $#{total_revenue(orders)}"
